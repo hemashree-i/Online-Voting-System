@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% include 'SuperMember/base.html' %}<br><br><br>
+<body>
+<center>
+    <h2 style="color:#00539CFF">Probability No</h2>
+    <table class="table table-striped   ms-2  " border="1" style="width:1400px;margin-top:50px;background-color:white;color:black;">
+        <form method="post">
+            {% csrf_token %}
+
+            <tr style="color:white;background-color:black;">
+                <th>ID</th>
+                <th>SERIAL NO</th>
+                <th>NAME</th>
+                <th>GYARDIAN'S NAME</th>
+                <th>HOUSE NO</th>
+                <th>HOUSE NAME</th>
+                <th>GENDER/AGE</th>
+                <th>ID NO</th>
+                <th>COMMENT</th>
+                <th>YES/NO</th>
+                <th>STATUS</th>
+            </tr>
+
+            {% for i in a %}
+            <tr>
+                <td style="">{{i.id}}</td>
+                <td>{{i.serialno}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.guardiansname}}</td>
+                <td>{{i.houseno}}</td>
+                <td>{{i.housename}}</td>
+                <td>{{i.genderage}}</td>
+                <td>{{i.idno}}</td>
+                <td>{{i.comment}}</td>
+                <td>{{i.choice}}</td>
+                <td><a href="/Comments/{{i.id}}" class="btn btn-dark">status</a></td>
+                {% endfor %}
+
+
+            </tr>
+        </form>
+    </table>
+</center>
+</body>
+{% include 'footer.html' %}
+</html>

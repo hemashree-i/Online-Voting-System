@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ed8bb72b2a.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% include 'AdminU/base.html' %}<br><br><br>
+<body><br><br><br>
+    <div class="comment-section">
+        <h1>UPDATE DETAILS</h1>
+        <div class="border"></div>
+        <form class="comment-form" method="POST">
+          {% csrf_token %}
+            <label class="comment-label">USER ID:</label>
+            <input type="text" class="comment-form-text" name="uid" value={{data.uid}}>
+            <label class="comment-label">USER NAME:</label>
+            <input type="text" class="comment-form-text" name="username" value={{data.username}}>
+            <label class="comment-label">VERIFY:</label>
+            <input type="checkbox" class="comment-form-text" name="verify_user" value={{data.verify_user}}>
+            <button type="submit" class="comment-form-btn">Submit</button>
+        </form>
+        
+    </div>
+  </body>
+{% include 'footer.html' %}
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% include 'AdminU/base.html' %}
+<body>
+<h2 align="center">VOTER COMMENT DETAILS</h2>
+<table class="table table-dark table-hover">
+  <tr>
+    <th>ID</th>
+      <th>YES/NO</th>
+    <th>Serial No</th>
+      <th>Name</th>
+      <th>Guardiansname</th>
+      <th>House No</th>
+      <th>House Name</th>
+      <th>Gender/Age</th>
+      <th>Id No</th>
+      <th>Comment</th>
+  </tr>
+  {% for i in a %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.choice}}</td>
+        <td>{{i.serialno}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.guardiansname}}</td>
+        <td>{{i.houseno}}</td>
+        <td>{{i.housename}}</td>
+        <td>{{i.genderage}}</td>
+        <td>{{i.idno}}</td>
+        <td>{{i.comments}}</td>
+
+        {% endfor %}
+    </tr>
+</table>
+</body>
+{% include 'AdminU/base.html' %}
+</html>

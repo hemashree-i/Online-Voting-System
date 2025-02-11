@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .issuebutton {
+            background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+            color: #fff;
+            border:none; 
+            border-radius:20px; 
+            padding:40px;
+            min-height:30px; 
+            min-width: 120px;
+            margin-right: 60px;
+            margin-left: 60px;
+          }
+
+        .issuebutton:hover {
+            background-color:#002ead;
+            transition: 2s;
+            transform: rotate(360deg);
+        }
+        
+      </style>
+</head>
+
+{% include 'AdminU/base.html' %}<br><br><br><br><br><br><br><br><br>
+<body>
+  <center>
+    <h1>SELECT USER</h1><br><br><br><br><br>
+        <a href="{% url 'AdminIssueDisplayLM' %}">
+        <button class="issuebutton" onClick='show' ('AdminIssueDisplayLM') style='padding-right: 50px; padding-left: 50px;'><i class="fa-solid fa-user"></i> Local Member</button></a>
+        <a href="{% url 'AdminIssueDisplayCM' %}">
+        <button class="issuebutton" onClick='show' ('AdminIssueDisplayCM')><i class="fa-solid fa-user"></i> Counsil Member</button></a>
+        <a href="{% url 'AdminIssueDisplaySM' %}">
+        <button class="issuebutton" onClick='show' ('AdminIssueDisplaySM') style='padding-right: 46px; padding-left: 46px;'><i class="fa-solid fa-user"></i> Super Member</button></a>
+        <a href="{% url 'AdminIssueDisplayP' %}">
+        <button class="issuebutton" onClick='show' ('AdminIssueDisplayP') style='padding-right: 65px; padding-left: 65px;'><i class="fa-solid fa-user"></i> President</button></a><br><br><br><br><br><br><br><br>
+</center>
+</body>
+{% include 'footer.html' %}
+</html>

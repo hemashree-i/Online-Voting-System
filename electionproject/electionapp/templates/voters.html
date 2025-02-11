@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Voter Register</h2>
+  <form method="POST">{% csrf_token %}
+    <div>
+      <div><input type=number name=serialno placeholder='serialno'></div>
+      <div><input type=text name=name placeholder='name'></div>
+      <div><input type=text name=guardian placeholder='guardian'></div>
+      <div><input type=text name=houseno placeholder='houseno'></div>
+      <div><input type=text name=housename placeholder='housename'></div>
+      <div><input type=text name=genderage placeholder='genderage'></div>
+      <div><input type=number name=idcard placeholder='idcard'></div>
+      <div><input type=text name=district placeholder='district'></div>
+      <div><input type=text name=localbody placeholder='localbody'></div>
+      <div><input type=text name=ward placeholder='ward'></div>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>

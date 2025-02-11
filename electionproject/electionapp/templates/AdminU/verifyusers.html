@@ -1,0 +1,112 @@
+{% comment %} <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong"> {% endcomment %}
+{% include 'AdminU/base.html' %}<br><br><br>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    
+    .comment-section {
+    
+      background-size: cover;
+      padding: 40px 0;
+    }
+    
+    .comment-section h1 {
+      /* to keep heading in centre */
+      text-align: center;
+      color: #ddd;
+      {% comment %} font-family: "Trirong", serif; {% endcomment %}
+      text-shadow: 3px 3px 3px #ababab;
+    }
+    
+    .border {
+      /* for a decorative rectangle */
+      width: 100px;
+      height: 10px;
+      background: #1ae6ca;
+      border-radius: 4px;
+      margin: 40px auto;
+    }
+    .comment-form {
+        /* to keep all form details in centre */
+      max-width: 600px;
+      margin: auto;
+      padding: 0 10px;
+      overflow: hidden;
+    }
+    .comment-form-text {
+      /* to decorate all form details */
+      border-radius: 25px;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 20px 0;
+      border: 0;
+      background: #111;
+      padding: 20px 40px;
+      outline: none;
+      color: #ddd;
+      transition: 0.5s;
+    }
+    
+    .comment-label {
+      /* to decorate all label details */
+      padding:;
+      outline: none;
+      color: black;
+      font-family: "Trirong", serif;
+      text-shadow: 3px 3px 3px #ababab;
+      transition: 0.5s;
+    }
+    
+    .comment-form-text:focus {
+      /* to create a shadowy effect for details form */
+      box-shadow: 0 0 10px 4px #e67b3e;
+     }
+     
+    textarea.comment-form-text {
+    /* to stop resizing of a textarea*/
+      resize: none;
+      height: 130px;
+     }
+    .comment-form-btn {
+      /* for decoration of a button */
+      float: right;
+      border: 0;
+      background: #2980b9;
+      color: #ffffff;
+      padding: 12px 50px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .comment-form-btn:hover {
+      /* for hovering effect of button */
+      background: #34495e;
+    }
+    </style>
+    <body><br><br><br>
+      <div class="comment-section">
+          <h1>UPDATE DETAILS</h1>
+          <div class="border"></div>
+          <form class="comment-form" method="POST">
+            {% csrf_token %}
+              <label class="comment-label">USER ID:</label>
+              <input type="text" class="comment-form-text" name="uid" value={{uid}}>
+              <label class="comment-label">USER NAME:</label>
+              <input type="text" class="comment-form-text" name="username" value={{usr}}>
+              {% comment %} <label class="comment-label">VERIFY:</label>
+              <input type="checkbox" name="verify_user"> {% endcomment %}
+              <label class="comment-label">VERIFY:</label>
+              <select class="comment-form-text" name="verify_user">
+                <option value="Verified">Verified</option>
+              </select>
+              <button type="submit" class="comment-form-btn">Submit</button>
+          </form>
+          
+      </div>
+    </body>
+    {% include 'footer.html' %}

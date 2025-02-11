@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% include 'AdminU/base.html' %}<br><br>
+<body>
+  <center>
+  <table class="table table-striped   ms-2  " border="1" style="width:1400px;margin-top:50px;background-color:white;color:black;">
+    <tr style="color:white;background-color:black;">
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Privilege</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>District</th>
+        <th>Localbody</th>
+        <th>Ward</th>
+        <th>Address</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th>Verify</th>
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>{{i.uid}}</td>
+    <td>{{i.firstname}} {{i.lastname}}</td>
+    <td>{{i.privilege}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.phone}}</td>
+    <td>{{i.district}}</td>
+    <td>{{i.localbody}}</td>
+    <td>{{i.ward}}</td>
+    <td>{{i.address}}</td>
+    <td><a href="/userupdate/{{i.id}}" class='btn btn-dark'>Update</a></td>
+    <td><a href="/userdelete/{{i.id}}" class='btn btn-dark'>Delete</a></td>
+    <td><a href="/verifyusers/{{i.id}}" class='btn btn-dark'>Verify</a></td>
+  </tr>
+{% endfor %}
+</table>
+</center>
+</body>
+{% include 'footer.html' %}
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+<!--    <style>-->
+<!--        html {-->
+<!--  scroll-behavior: smooth;-->
+<!--}-->
+<!--body {-->
+<!--  margin: 0;-->
+<!--  padding: 0;-->
+<!--  font-family: Poppins;-->
+<!--}-->
+<!--h1 {-->
+<!--  font-size: 50px;-->
+<!--  font-family: Audiowide;-->
+<!--}-->
+<!--p {-->
+<!--  font-size: 24px;-->
+<!--  line-height: 50px;-->
+<!--}-->
+<!--.navbar {-->
+<!--  position: fixed;-->
+<!--  display: flex;-->
+<!--  justify-content: center;-->
+<!--  align-items: center;-->
+<!--  flex-direction: row;-->
+<!--  flex-wrap: wrap;-->
+<!--  background-color: #674188;-->
+<!--  width: 100%;-->
+<!--  height: 90px;-->
+<!--  z-index: 1;-->
+
+<!--}-->
+<!--.nav {-->
+<!--  display: flex;-->
+<!--  justify-content: right;-->
+<!--  list-style: none;-->
+<!--  margin-right: 15%;-->
+<!--}-->
+<!--.logo {-->
+<!--  flex: 1 1 auto;-->
+<!--  margin-left: 10%;-->
+<!--  text-transform: uppercase;-->
+<!--  letter-spacing: 1px;-->
+<!--  font-weight: bold;-->
+<!--  font-size: 35px;-->
+<!--}-->
+<!--img {-->
+<!--  width: 20%;-->
+<!--}-->
+<!--a {-->
+<!--  margin: 12px;-->
+<!--  color: #000;-->
+<!--  text-decoration: none;-->
+<!--  text-transform: uppercase;-->
+<!--}-->
+<!--a:hover {-->
+<!--  color: #000;-->
+<!--}-->
+<!--.banner-area {-->
+<!--  position: relative;-->
+<!--  background-image: url(https://i.postimg.cc/GtRM7mdX/1.jpg);-->
+<!--  width: 100%;-->
+<!--  height: 100vh;-->
+<!--  background-repeat: no-repeat;-->
+<!--  background-size: cover;-->
+<!--}-->
+
+<!--.about-area,-->
+<!--.port-area,-->
+<!--.service-area,-->
+<!--.contact-area {-->
+<!--  position: relative;-->
+<!--  display: flex;-->
+<!--  justify-content: space-around;-->
+<!--  align-items: center;-->
+<!--  flex-wrap: wrap;-->
+<!--  flex-direction: row;-->
+<!--  width: 100%;-->
+<!--  height: 700px;-->
+<!--}-->
+<!--.text-part {-->
+<!--  width: 65%;-->
+<!--  height: 80%;-->
+<!--}-->
+<!--.about-area {-->
+<!--  background-color: #fefefe;-->
+<!--}-->
+<!--.port-area {-->
+<!--  background-color: #262626;-->
+<!--  color: #fff;-->
+<!--}-->
+<!--.service-area {-->
+<!--  background-color: #fefefe;-->
+<!--}-->
+<!--.contact-area {-->
+<!--  background-color: #262626;-->
+<!--  color: #fff;-->
+<!--}-->
+<!--.navbar .nav li a{-->
+<!--color:white;-->
+<!--}-->
+
+
+<!--    </style>-->
+</head>
+{% include 'SuperMember/base.html' %}
+<body>
+
+
+<center>
+    <h2 style="color:#00539CFF; margin-top:100px">Probability No</h2>
+    <table class="table table-striped ms-2" border="1" style="width:1400px;background-color:white;color:black;">
+        <form method="post">
+            {% csrf_token %}
+
+            <tr style="color:white;background-color:black;">
+                <th>NAME</th>
+                <th>GUARDIAN'S NAME</th>
+                <th>GENDER/AGE</th>
+                <th>ID NO</th>
+                <th>COMMENTS</th>
+                <th>PROBABILITY</th>
+                <th>STATUS UPDATE</th>
+            </tr>
+
+            {% for i in a %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.guardiansname}}</td>
+                <td>{{i.genderage}}</td>
+                <td>{{i.idno}}</td>
+                <td>{{i.comments}}</td>
+                <td>{{i.choice}}</td>
+                <td><a href="/Comments/{{i.id}}" class='btn btn-dark'>UPDATE</a></td>
+                {% endfor %}
+
+
+            </tr>
+        </form>
+    </table>
+</center>
+</body>
+{% include 'footer.html' %}
+</html>

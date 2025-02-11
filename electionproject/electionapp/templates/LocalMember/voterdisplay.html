@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ed8bb72b2a.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table.rounded {
+            margin-top:40px;
+            border-collapse: separate;
+            border-spacing: 0;
+            {% comment %} width: 100%; {% endcomment %}
+            border-radius: 10px;
+            overflow: hidden;
+            border: 0px solid #d9d9d9;
+            {% comment %} background-color: lightgrey; {% endcomment %}
+          }
+          
+          td, th {
+            padding: 15px;
+            text-align: center;
+          }
+          
+          th {
+            background-color: black;
+            color: white;
+          }
+          
+          tr:nth-child(even) td {
+            background-color: #f9f9f9;
+          }
+          
+          tr:hover td {
+            background-color: #ebebeb;
+          }
+          
+          tbody td:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+          }
+          
+          tbody td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
+          
+          thead th:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+          }
+          
+          thead th:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
+                   
+    </style>
+</head>
+<body>
+    {% include 'LocalMember/base1.html' %}<br><br><br>
+    <center>
+<table class="rounded">
+<thead>
+  <tr>
+      <th>Serial No</th>
+      <th>Name</th>
+      <th>Guardian's Name</th>
+      <th>House No</th>
+      <th>House Name</th>
+      <th>Gender/Age</th>
+      <th>Id No</th>
+      <th>Link</th>
+</thead>
+  </tr>
+     {% for i in a %}
+    <tbody>
+    <tr>
+        <td>{{i.serialno}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.guardiansname}}</td>
+        <td>{{i.houseno}}</td>
+        <td>{{i.housename}}</td>
+        <td>{{i.genderage}}</td>
+        <td>{{i.idno}}</td>
+        <td><a href="/voterdetails/{{i.id}}" class='btn btn-dark' style="border-radius:10px;">Update</a></td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</center>
+</table>
+</body>
+{% include 'footer.html' %}
+</html>

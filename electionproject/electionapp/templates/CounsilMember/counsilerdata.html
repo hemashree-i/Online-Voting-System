@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ed8bb72b2a.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table table-striped   ms-2  " border="1" style="width:1400px;margin-top:50px;background-color:white;color:black;">
+    <tr style="color:white;background-color:black;">
+
+  <tr>
+      <th>serialno</th>
+      <th>name</th>
+      <th>guardiansname</th>
+      <th>houseno</th>
+      <th>housename</th>
+      <th>genderage</th>
+      <th>idno</th>
+      <th>LINK</th>
+
+
+  </tr>
+     {% for i in a %}
+    <tr>
+
+        <td>{{i.serialno}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.guardiansname}}</td>
+        <td>{{i.houseno}}</td>
+        <td>{{i.housename}}</td>
+        <td>{{i.genderage}}</td>
+        <td>{{i.idno}}</td>
+        <td><a href="http://127.0.0.1:8000/displaycounsiler/{{i.id}}" class='btn btn-dark'>Next--></a></td>
+
+        {% endfor %}
+    </tr>
+</table>
+</body>
+</html>

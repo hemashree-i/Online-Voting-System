@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <style>
+<!--       .navbar .nav li a{color:black;-->
+<!--text-decoration:none;-->
+<!--}-->
+
+<!--    html {-->
+<!--  scroll-behavior: smooth;-->
+<!--}-->
+<!--body {-->
+<!--  margin: 0;-->
+<!--  padding: 0;-->
+<!--  font-family: Poppins;-->
+<!--}-->
+<!--h1 {-->
+<!--  font-size: 50px;-->
+<!--  font-family: Audiowide;-->
+<!--}-->
+<!--p {-->
+<!--  font-size: 24px;-->
+<!--  line-height: 50px;-->
+<!--}-->
+<!--.navbar {-->
+<!--  position: fixed;-->
+<!--  display: flex;-->
+<!--  justify-content: center;-->
+<!--  align-items: center;-->
+<!--  flex-direction: row;-->
+<!--  flex-wrap: wrap;-->
+<!--  background-color:white;-->
+<!--  width: 100%;-->
+<!--  height: 90px;-->
+<!--  z-index: 1;-->
+<!--}-->
+<!--.nav {-->
+<!--  display: flex;-->
+<!--  justify-content: right;-->
+<!--  list-style: none;-->
+<!--  margin-right: 15%;-->
+
+<!--}-->
+<!--.logo {-->
+<!--  flex: 1 1 auto;-->
+<!--  margin-left: 10%;-->
+<!--  text-transform: uppercase;-->
+<!--  letter-spacing: 1px;-->
+<!--  font-weight: bold;-->
+<!--  font-size: 35px;-->
+<!--}-->
+<!--img {-->
+<!--  width: 20%;-->
+<!--}-->
+<!--a {-->
+<!--  margin: 8px;-->
+<!--  color: #000;-->
+<!--  text-decoration: none;-->
+<!--  text-transform: uppercase;-->
+<!--}-->
+<!--a:hover {-->
+<!--  color: #000;-->
+<!--}-->
+<!--.banner-area {-->
+<!--  position: relative;-->
+<!--  background-image: url(https://i.postimg.cc/GtRM7mdX/1.jpg);-->
+<!--  width: 100%;-->
+<!--  height: 100vh;-->
+<!--  background-repeat: no-repeat;-->
+<!--  background-size: cover;-->
+<!--}-->
+
+<!--.about-area,-->
+<!--.port-area,-->
+<!--.service-area,-->
+<!--.contact-area {-->
+<!--  position: relative;-->
+<!--  display: flex;-->
+<!--  justify-content: space-around;-->
+<!--  align-items: center;-->
+<!--  flex-wrap: wrap;-->
+<!--  flex-direction: row;-->
+<!--  width: 100%;-->
+<!--  height: 700px;-->
+<!--}-->
+<!--.text-part {-->
+<!--  width: 65%;-->
+<!--  height: 80%;-->
+<!--}-->
+<!--.about-area {-->
+<!--  background-color: #fefefe;-->
+<!--}-->
+<!--.port-area {-->
+<!--  background-color: #262626;-->
+<!--  color: #fff;-->
+<!--}-->
+<!--.service-area {-->
+<!--  background-color: #fefefe;-->
+<!--}-->
+<!--.contact-area {-->
+<!--  background-color: #262626;-->
+<!--  color: #fff;-->
+<!--}-->
+<!--.navbar .nav li a{-->
+<!--color:white;-->
+<!--}-->
+.a{
+background-color:black;
+color:white;
+}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:white;">
+<!--<div class="navbar">-->
+<!--  <a class="logo" href="#" style="color:black "><i>ELECTION PORTAL</i></a>-->
+<!--  <ul class="nav">-->
+<!--    <li><a href="#home" style="color:black">Home</a></li>-->
+<!--    <li><a href="#about" style="color:black">About</a></li>-->
+<!--      <li><a href="excelview" style="color:black">Counciler</a></li>-->
+
+<!--  </ul>-->
+<!--</div>-->
+<!--<section class="banner-area" id="home">-->
+
+
+</section>
+<center>
+    <h2 align="center" style="color:black"><b>VOTER DETAILS</b></h2>
+  <table class="table table-striped   ms-2  " border="1" style="width:1400px;margin-top:50px;background-color:white;color:black;">
+    <tr style="color:white;background-color:black;">
+
+      <th>Probability</th>
+      <th>Name</th>
+      <th>Guardians Name</th>
+      <th>House Name</th>
+      <th>Gende/Age</th>
+      <th>ID NO</th>
+      <th>Comment</th>
+    </tr>
+  {% for i in voter %}
+    <tr>
+        <td>{{i.choice}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.guardiansname}}</td>
+        <td>{{i.housename}}</td>
+        <td>{{i.genderage}}</td>
+        <td>{{i.idno}}</td>
+        <td>{{i.comments}}</td>
+  {% endfor %}
+    </tr>
+</table>
+</center>
+</body>
+</html>

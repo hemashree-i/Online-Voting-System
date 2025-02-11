@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% include 'AdminU/base.html' %}<br><br>
+<body>
+  <center>
+<h2 align="center" style="color:black"><b>District</b></h2>
+<form action="" method="POST">
+    {% csrf_token %}
+  <table class="table table-striped   ms-2  " border="1" style="width:1400px;margin-top:50px;background-color:white;color:black;">
+    <tr style="color:white;background-color:black;">
+      <th>District</th>
+      <th>Update</th>
+  </tr>
+    <tr>
+      <td><input type="text" name="District" value={{a.District}}></td>
+      <td><button type="submit" class="btn btn-success">Submit</button></td>
+    </tr>
+</table>
+</form>
+</center>
+</body>
+{% include 'footer.html' %}
+</html>

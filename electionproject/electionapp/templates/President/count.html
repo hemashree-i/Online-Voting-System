@@ -1,0 +1,70 @@
+{% include 'President/base4.html' %}
+<style>
+.* {
+    box-sizing: border-box;
+  }
+  
+  /* Float three columns side by side */
+  .column {
+    float: left;
+    width: 30%;
+    padding: 1.5%;
+  }
+  
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 30%;
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    margin-left: 140px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    color: white;
+  }
+</style>
+  <body><br><br><br><br><br>
+    <h1 align=center>TOTAL VOTING PROBABILITY<h1><br><br><br>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <h3 style='color:white;'><i class="fa-solid fa-check"></i></h3>
+          <h3 style='color:white;'><span id="yes">{{yes}}</span></h3>
+          <h3 style='color:white;'>Will Vote</h3>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <h3 style='color:white;'><i class="fa-solid fa-question"></i></h3>
+          <h3 style='color:white;'><span id="maybe">{{maybe}}</span></h3>
+          <h3 style='color:white;'>Maybe</h3>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <h3 style='color:white;'><i class="fa-solid fa-x"></i></h3>
+          <h3 style='color:white;'><span id="no">{{no}}</span></h3>
+          <h3 style='color:white;'>Not Interested</h3>
+        </div>
+      </div> 
+    </div>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ed8bb72b2a.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% include 'LocalMember/base1.html' %}
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    
+    .comment-section {
+    
+      background-size: cover;
+      padding: 40px 0;
+    }
+    
+    .comment-section h1 {
+      /* to keep heading in centre */
+      text-align: center;
+      color: #ddd;
+      text-shadow: 3px 3px 3px #ababab;
+    }
+    
+    .border {
+      /* for a decorative rectangle */
+      width: 100px;
+      height: 10px;
+      background: #1ae6ca;
+      border-radius: 4px;
+      margin: 40px auto;
+    }
+    .comment-form {
+        /* to keep all form details in centre */
+      max-width: 600px;
+      margin: auto;
+      padding: 0 10px;
+      overflow: hidden;
+    }
+    .comment-form-text {
+      /* to decorate all form details */
+      border-radius: 25px;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 20px 0;
+      border: 0;
+      background: #111;
+      padding: 20px 40px;
+      outline: none;
+      color: #ddd;
+      transition: 0.5s;
+    }
+    
+    .comment-label {
+      /* to decorate all label details */
+      padding:;
+      outline: none;
+      color: black;
+      font-family: "Trirong", serif;
+      text-shadow: 3px 3px 3px #ababab;
+      transition: 0.5s;
+    }
+    
+    .comment-form-text:focus {
+      /* to create a shadowy effect for details form */
+      box-shadow: 0 0 10px 4px #e67b3e;
+     }
+     
+    textarea.comment-form-text {
+    /* to stop resizing of a textarea*/
+      resize: none;
+      height: 130px;
+     }
+    .comment-form-btn {
+      /* for decoration of a button */
+      float: right;
+      border: 0;
+      background: #2980b9;
+      color: #ffffff;
+      padding: 12px 50px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .comment-form-btn:hover {
+      /* for hovering effect of button */
+      background: #34495e;
+    }
+    </style>
+    <body><br><br><br>
+      <div class="comment-section">
+          <h1>UPDATE DETAILS</h1>
+          <div class="border"></div>
+            <form class="comment-form" action="" method="POST">
+                {% csrf_token %}
+                <div align='center'>User:
+                    {{uid}}<br><br>
+                </div>
+                <label class="comment-label">VOTER NAME:</label>
+                <input type="text" class="comment-form-text" name="name" value={{a.name}} readonly>
+                <label class="comment-label">VOTER ID:</label>
+                <input type="text" class="comment-form-text" name="idno" value={{a.idno}} readonly>
+                <i class="fa-solid fa-phone"></i><input type='number' name='phone' class="comment-form-text" placeholder='Add Phone'>
+                <i class="fa-solid fa-envelope"></i><input type='text' name='gmail' class="comment-form-text" placeholder='Add Gmail (optional)'>
+                <i class="fa-brands fa-instagram"></i><input type='text' name='instagram' class="comment-form-text" placeholder='Add instagram (optional)'>
+                <i class="fa-brands fa-facebook"></i><input type='text' name='facebook' class="comment-form-text" placeholder='Add Facebook (optional)'>
+                <i class="fa-brands fa-linkedin"></i><input type='text' name='linkedin' class="comment-form-text" placeholder='Add Linkedin (optional)'>
+                <label class="comment-label">VOTING PROBABILITY:</label>
+                <select class='comment-form-text' name='probability'>
+                    <option>--------</option>
+                    <option value='YES'>YES</option>
+                    <option value='MAYBE'>MAYBE</option>
+                    <option value='NO'>NO</option>
+                </select><br>
+                <input type="submit" class="comment-form-btn" value="submit">
+            </form>
+          </div>
+      </div>
+    </body>
+    {% include 'footer.html' %}

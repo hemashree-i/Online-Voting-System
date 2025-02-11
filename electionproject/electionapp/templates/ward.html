@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <label>id</label>
+    <input type="number" name="id3" placeholder="enter id"><br>
+    <label>ward name</label>
+    <input type="text" name="ward" placeholder="enter ward"><br>
+    <label>distrtict id</label>
+    <input type="number" name="dis_id" placeholder="enter district id"><br>
+    <label>local body id</label>
+    <input type="number" name="loc_id" placeholder="enter local body id"><br>
+
+    <input type="submit" >
+</form>
+</body>
+</html>
